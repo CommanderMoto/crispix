@@ -1,0 +1,6 @@
+[Sprite]
+Texture=ResultLady 1x4.png
+Frame0000=1
+Delay0000=1
+Frame0001=2
+Delay0001=.5

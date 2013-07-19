@@ -1,0 +1,8 @@
+[Sprite]
+Texture=_Common Receptor 2x1.png
+
+Frame0000=0
+Delay0000=.1
+
+Frame0001=1
+Delay0001=.4

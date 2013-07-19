@@ -1,0 +1,2 @@
+copy "C:\Program Files\Dance Dance Immolation\trunk\Data\Master StepMania.ini" "C:\Program Files\Dance Dance Immolation\trunk\Data\StepMania.ini"
+"C:\Program Files\Dance Dance Immolation\trunk\Program\StepMania.exe"

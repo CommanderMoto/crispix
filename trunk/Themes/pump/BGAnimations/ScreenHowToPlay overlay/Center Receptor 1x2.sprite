@@ -1,0 +1,8 @@
+[Sprite]
+Texture=Center Receptor 1x2.png
+
+Frame0000=0
+Delay0000=.1
+
+Frame0001=1
+Delay0001=.4

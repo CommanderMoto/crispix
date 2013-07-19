@@ -1,0 +1,26 @@
+[Sprite]
+Texture=Nyami_Win 4x1.png
+
+Frame0000=0
+Delay0000=.1
+
+Frame0001=1
+Delay0001=.1
+
+Frame0002=2
+Delay0002=.6
+
+Frame0003=3
+Delay0003=.4
+
+Frame0004=2
+Delay0004=.4
+
+Frame0005=3
+Delay0005=.4
+
+Frame0006=2
+Delay0006=.6
+
+Frame0007=1
+Delay0007=.15
