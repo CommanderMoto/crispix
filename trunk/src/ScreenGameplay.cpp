@@ -407,7 +407,7 @@ void ScreenGameplay::Init()
 			if( !GAMESTATE->IsPlayerEnabled(p) && !SHOW_LIFE_METER_FOR_DISABLED_PLAYERS )
 				continue;	// skip
 
-			m_pLifeMeter[p] = new DDILifeMeter;
+			m_pLifeMeter[p] = new DDILifeMeter();
 
 			m_pLifeMeter[p]->Load( p );
 			m_pLifeMeter[p]->SetName( ssprintf("LifeP%d",p+1) );
@@ -826,6 +826,8 @@ void ScreenGameplay::SetupSong( PlayerNumber p, int iSongIndex )
 	pStyle->GetTransformedNoteDataForStyle( p, &pOriginalNoteData, &pNewNoteData );
 	m_Player[p].Load( p, &pNewNoteData, m_pLifeMeter[p], m_pCombinedLifeMeter, m_pPrimaryScoreDisplay[p], m_pSecondaryScoreDisplay[p], m_pInventory[p], m_pPrimaryScoreKeeper[p], m_pSecondaryScoreKeeper[p]);
 
+	// tell the life meter the number of notes, now that we know it
+	m_pLifeMeter[p]->SetNumTapNotes(m_Player[p].GetNumTapNotes());
 
 	// Put course options into effect.  Do this after Player::Load so
 	// that mods aren't double-applied.

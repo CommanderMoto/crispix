@@ -1179,16 +1179,21 @@ void ScreenSelectMusic::MenuStart( PlayerNumber pn )
 		{
 //			float fShowSeconds = m_Out.GetLengthSeconds();
 
-			// show "hold START for options"
-			m_sprOptionsMessage.SetDiffuse( RageColor(1,1,1,1) );	// visible
-			SET_XY_AND_ON_COMMAND( m_sprOptionsMessage );
+			m_bAllowOptionsMenu = PREFSMAN->m_ShowSongOptions != PrefsManager::NO;
 
-			m_bAllowOptionsMenu = true;
-			/* Don't accept a held START for a little while, so it's not
-			 * hit accidentally.  Accept an initial START right away, though,
-			 * so we don't ignore deliberate fast presses (which would be
-			 * annoying). */
-			this->PostScreenMessage( SM_AllowOptionsMenuRepeat, 0.5f );
+			if (m_bAllowOptionsMenu) 
+			{
+				// show "hold START for options"
+				m_sprOptionsMessage.SetDiffuse( RageColor(1,1,1,1) );	// visible
+				SET_XY_AND_ON_COMMAND( m_sprOptionsMessage );
+
+//				m_bAllowOptionsMenu = true;
+				/* Don't accept a held START for a little while, so it's not
+				* hit accidentally.  Accept an initial START right away, though,
+				* so we don't ignore deliberate fast presses (which would be
+				* annoying). */
+				this->PostScreenMessage( SM_AllowOptionsMenuRepeat, 0.5f );
+			}
 		}
 
 		/* If we're currently waiting on song assets, abort all except the music and

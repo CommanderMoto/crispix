@@ -27,6 +27,7 @@
 #include "StepMania.h"
 #include "CryptManager.h"
 #include "Style.h"
+#include "DDIManager.h"
 
 const int NUM_SCORE_DIGITS	=	9;
 
@@ -91,6 +92,13 @@ ScreenEvaluation::ScreenEvaluation( CString sClassName ) : ScreenWithMenuElement
 
 void ScreenEvaluation::Init()
 {
+	// $DDI$ disarm the game if this is the last stage
+	if (GAMESTATE->GetNumStagesLeft() == 1)	// 1 == on last stage
+	{
+		GAMESTATE->m_bRunningArmed = false;		// don't go to the arming screen when the relay opens
+		DDIMAN->ArmDisable();					// disarm when leaving game-over screen
+	}
+
 	//
 	// debugging
 	//

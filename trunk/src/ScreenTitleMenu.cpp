@@ -274,9 +274,24 @@ void ScreenTitleMenu::Input( const DeviceInput& DeviceI, const InputEventType ty
 				return;
 			}
 
+			// $DDI$
+			// Little hack: set number of players by according to selection, not start buttons as usual
+			if (m_Choice == 0)	// "burn"
+			{
+				GAMESTATE->JoinPlayer( PLAYER_1 );
+				GAMESTATE->JoinPlayer( PLAYER_2 );
+				GAMESTATE->m_pCurStyle = GAMEMAN->GameAndStringToStyle( GAMEMAN->GetDefaultGame(), "versus" );
+			} 
+			else if (m_Choice == 1) // "burn alone"
+			{
+				GAMESTATE->JoinPlayer( PLAYER_1 );
+				GAMESTATE->m_pCurStyle = GAMEMAN->GameAndStringToStyle( GAMEMAN->GetDefaultGame(), "single" );
+			}
+
+/*
 			if( !Screen::JoinInput( DeviceI, type, GameI, MenuI, StyleI ) )
 				return;
-
+*/
 			if( !m_Out.IsTransitioning() )
 				StartTransitioning( SM_GoToNextScreen );
 		}

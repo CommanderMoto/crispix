@@ -21,6 +21,8 @@ public:
 	
 	virtual void Load( PlayerNumber pn );
 
+	void SetNumTapNotes(int numTapNotes);	// call to set relative miss scoring (more notes = less pressure drop per miss)
+
 	virtual void Update( float fDeltaTime );
 	virtual void DrawPrimitives();
 
@@ -50,6 +52,9 @@ private:
 	const DDISequence &RandomBurninateSequence();
 	void TriggerCombos();
 
+	float ComputePressureChangeOld() const;		// old and new scoring methods
+	float ComputePressureChangeNew() const;
+
 	DDILifeMeterStream*	m_pStream;
 
 	float		m_fPressure;
@@ -60,6 +65,7 @@ private:
 	int			m_iCombo;				// current combo count for this player
 	float		m_fTimeSinceLastMiss;	// hit 'em harder when they're doing well
 	int			m_iBurnCombo;			// combo of last unburned miss
+	int			m_numTapNotes;			// number of tap notes in current song, for this player
 
 	// Sequence tables, loaded from ini
 	typedef		map<int, DDISequence>	sequenceMap;

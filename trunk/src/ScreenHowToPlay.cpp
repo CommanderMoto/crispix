@@ -125,7 +125,7 @@ ScreenHowToPlay::ScreenHowToPlay( CString sName ) : ScreenAttract( sName )
 	// silly to use the lifebar without a player, since the player updates the lifebar
 	if( USELIFEBAR )
 	{
-		m_pLifeMeterBar = new DDILifeMeter;
+		m_pLifeMeterBar = new DDILifeMeter();
 		m_pLifeMeterBar->Load( PLAYER_1 );
 		m_pLifeMeterBar->Command( LIFEBARONCOMMAND );
 		m_pLifeMeterBar->FillForHowToPlay( NUM_PERFECTS, NUM_MISSES );

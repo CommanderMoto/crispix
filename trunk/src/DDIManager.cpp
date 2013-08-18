@@ -156,6 +156,8 @@ void DDIManager::StopTheMadness()
 
 	for (int df=0; df<NUM_DISPLAY_FLAMES; df++)
 		SetFlamethrowerRelayState(DisplayFlameToRelay((DisplayFlame)df), false);
+
+	m_pDriver->Flush();
 }
 
 void DDIManager::SetLightState(DDILight dl, bool state)
@@ -256,7 +258,7 @@ void DDIManager::Update( float fDeltaTime )
 	// update "temperatures" before we send new state, to handle throttling correctly
 	UpdateFlamethrowerTemp( fDeltaTime );
 
-	// Output current state (relay driver will only send data on changes)
+	// Output current state (relay driver will only send data on flush)
 	for (int pn=0; pn<NUM_PLAYERS; pn++)
 		for (int pf=0; pf<NUM_PLAYER_FLAMES; pf++)
 			SetFlamethrowerRelayState(PlayerFlameToRelay((PlayerNumber)pn, (PlayerFlame)pf), bPlayerFlameState[pn][pf]);

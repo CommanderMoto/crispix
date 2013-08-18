@@ -1,0 +1,25 @@
+[BGAnimation]
+LengthSeconds=10
+
+[Layer1]
+File=w.png
+Type=1
+Command=
+
+[Layer3]
+File=bg.png
+Type=1		// 0=sprite, 1=stretch, 2=particles, 3=tiles
+Command=diffusealpha,1;linear,10.0;diffusealpha,0;linear,10.0;diffusealpha,1;
+
+[Layer4]
+Type=3
+File=diamond.jpg
+Command=diffusealpha,0.3;
+TileVelocityX=-50
+TileVelocityY=-50
+
+
+[Layer5]
+File=back1.png
+Type=0
+Command=x,512;y,240;zoom,2.5;spin;diffusealpha,0.5;

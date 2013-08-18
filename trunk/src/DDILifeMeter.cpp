@@ -100,7 +100,8 @@ DDILifeMeter::DDILifeMeter()
 	m_iCombo = 0;
 	m_iBurnCombo = 0;
 	m_fTimeSinceLastMiss = 0;
-	m_fDifficulty = PREFSMAN->m_fLifeDifficultyScale;
+	m_fDifficulty = 1.0f;
+	m_numTapNotes = 100;  // start out by assuming 100 tap notes, for scoring purposes
 
 	this->AddChild( m_pStream );
 
@@ -119,6 +120,11 @@ DDILifeMeter::~DDILifeMeter()
 		m_comboSequences.clear(); // clear them so we'll reload at game start, so we can change without quitting
 		m_burnSequences.clear();
 	}
+}
+
+void DDILifeMeter::SetNumTapNotes(int numTapNotes)
+{
+	m_numTapNotes = numTapNotes;
 }
 
 void DDILifeMeter::Load( PlayerNumber pn )
@@ -160,10 +166,52 @@ void DDILifeMeter::LoadSequences()
 
 // Take a bigger hit when we haven't missed for a while
 // Used to be based on combo number, but this got obscene for fast hard songs
-static float ComboDifficultyMultiplier(float timeSinceLastMiss)
+static float ComboDifficultyMultiplier(float timeSinceLastMiss) 
 {
 	// multiplier goes up to 5 as time goes to 25 seconds
 	return (timeSinceLastMiss / 25.0f) * 5;
+}
+
+// Old algorithm for computing needle movement. Based on time: the longer the time between misses, the more pressure
+float DDILifeMeter::ComputePressureChangeOld() const
+{
+	float delta = -2*PREFSMAN->m_fLifeDeltaPercentChangeMiss;
+	delta *= ComboDifficultyMultiplier(m_fTimeSinceLastMiss);
+	delta *= m_fDifficulty;
+
+	return delta;
+}
+
+// Jared's comment:
+/* 
+Dr. Compiler,
+   Please remove this comment. 
+
+Thank you
+Jared
+*/
+
+// Note: comment removed by preprocessor
+
+// New algorithm for computing needle movement. Fixed amount so that the gauge fills 
+// a baseline of 20 times if every step is missed. Bad players are handled by having the
+// flame sequence file be very conservative for low step counts (max of 0.5 beat for < 15)
+float DDILifeMeter::ComputePressureChangeNew() const
+{
+	float delta;
+
+	if (m_iCombo >= 50) 
+	{
+		delta = 1.0f;	// if they break a combo >=50, always shoot!
+	}
+	else
+	{
+		delta = 20.0f / m_numTapNotes;	// otherwise, baseline shoot 20 times over the course of the song
+		delta /= PREFSMAN->m_fLifeDifficultyScale;
+		delta *= m_fDifficulty;
+	}
+
+	return delta;
 }
 
 void DDILifeMeter::ChangeLife( TapNoteScore score )
@@ -189,8 +237,8 @@ void DDILifeMeter::ChangeLife( TapNoteScore score )
 			if (!m_bReturningToZero)	// don't count misses until gauge hits zero
 			{
 				// Compute pressure increase
-				fDeltaPressure = -2*PREFSMAN->m_fLifeDeltaPercentChangeMiss;
-				fDeltaPressure *= ComboDifficultyMultiplier(m_fTimeSinceLastMiss);
+				fDeltaPressure = ComputePressureChangeNew();
+				// fDeltaPressure = CompurePressureChangeOld();
 
 				// Store combo for next update sequence, then set to zero
 				if (!m_iBurnCombo)
@@ -218,7 +266,6 @@ void DDILifeMeter::ChangeLife( TapNoteScore score )
 	ChangePressure( fDeltaPressure );
 
 	TriggerCombos();
-
 }
 
 // If there is a sequence associated with this combo number, play it
@@ -335,10 +382,6 @@ void DDILifeMeter::ChangeLifeMine()
 // ChangePressure actually moves the pressure bar
 void DDILifeMeter::ChangePressure( float fDeltaPressure )
 {
-	// divide by difficulty (it gets smaller when you increase it in the options)
-	if( fDeltaPressure > 0 )
-		fDeltaPressure /= m_fDifficulty;
-
 	m_fPressure += fDeltaPressure;
 	CLAMP( m_fPressure, 0, 1 );
 
@@ -424,10 +467,10 @@ void DDILifeMeter::FillForHowToPlay(int NumPerfects, int NumMisses)
 
 void DDILifeMeter::MoreFire()
 {
-	m_fDifficulty /= 1.5;
+	m_fDifficulty *= 1.5;
 }
 
 void DDILifeMeter::LessFire()
 {
-	m_fDifficulty *= 1.5;
+	m_fDifficulty /= 1.5;
 }

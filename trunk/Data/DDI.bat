@@ -1,2 +1,5 @@
-copy "C:\Program Files\Dance Dance Immolation\trunk\Data\Master StepMania.ini" "C:\Program Files\Dance Dance Immolation\trunk\Data\StepMania.ini"
-"C:\Program Files\Dance Dance Immolation\trunk\Program\StepMania.exe"
+del "StepMania.ini"
+copy "Master StepMania.ini" "StepMania.ini"
+del "Keymaps.ini"
+copy "Master Keymaps.ini" "Keymaps.ini"
+..\Program\StepMania.exe

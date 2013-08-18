@@ -1,0 +1,118 @@
+StepMania 3.9 random build
+Compiled Wed Aug 23 01:49:51 2006 (build 32)
+Log starting 2013-03-02 16:12:30
+Loading window: win32
+Windows 5.1 (WinXP) build 2600 [Service Pack 3]
+Memory: 2038mb total, 3934mb swap (3753mb swap avail)
+Video driver: Intel(R) 82945G Express Chipset Family [Intel Corporation]
+              6.14.10.4926, 2-15-2008 [pci\ven_8086&dev_2772]
+Drive: "FUJITSU MHY2080BH" Driver: atapi DMA: yes
+Sound device 0: Realtek HD Audio output, 5.10, MID 1, PID 100 
+DirectSound Driver: Primary Sound Driver
+DirectSound Driver: Realtek HD Audio output RtkHDAud.sys 5.10.0.5591 built by: WinDDK [4713472b, 03-27-2008]
+DirectSound sample rates: 8000..192000 (continuous)
+Sound driver: DirectSound
+WARNING: Couldn't find any SM, DWI, BMS, or KSF files in 'Songs/.svn/prop-base/'.  This is not a valid song directory.
+WARNING: Couldn't find any SM, DWI, BMS, or KSF files in 'Songs/.svn/props/'.  This is not a valid song directory.
+WARNING: Couldn't find any SM, DWI, BMS, or KSF files in 'Songs/.svn/text-base/'.  This is not a valid song directory.
+WARNING: Couldn't find any SM, DWI, BMS, or KSF files in 'Songs/.svn/tmp/'.  This is not a valid song directory.
+WARNING: Failed to read section CourseScores
+WARNING: Failed to read section CategoryScores
+WARNING: Failed to read section ScreenshotData
+WARNING: Failed to read section CalorieData
+WARNING: Failed to read section RecentSongScores
+WARNING: Failed to read section RecentCourseScores
+Video renderers: 'd3d,opengl'
+SDL version: 1.2.6
+Fullscreen 640x480 16 color 16 texture 0Hz Vsync NoAA
+Found 3 DirectInput devices:
+   0: 'Keyboard' axes: 0, hats: 0, buttons: 256 (buffered)
+   1: 'GamePad Pro USB ' axes: 2, hats: 0, buttons: 10 (buffered)
+   2: 'GamePad Pro USB ' axes: 2, hats: 0, buttons: 10 (buffered)
+Input devices changed from 'Keyboard' to 'Keyboard,GamePad Pro USB ,GamePad Pro USB '.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenHowToPlay background/diamond.jpg' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 400x213 and frame size is 400.0x213.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 400x214, which is a frame size of 400x214.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenHowToPlay overlay/howtoplay.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 440x63 and frame size is 440.0x63.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 440x64, which is a frame size of 440x64.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/PressureGauge background.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 259x51 and frame size is 259.0x51.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 260x52, which is a frame size of 260x52.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/PressureGauge foreground.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 259x51 and frame size is 259.0x51.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 260x52, which is a frame size of 260x52.
+WARNING: File "Themes/DDI2ndMix/Numbers/_numbers1 5x3.pn" is really png
+WARNING: The graphic 'Themes/DDI2ndMix/Numbers/ScoreDisplayNormal 5x3.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 110x92 and frame size is 22.0x30.7.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 110x96, which is a frame size of 22x32.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenTitleMenu background/diamond.jpg' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 400x213 and frame size is 400.0x213.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 400x214, which is a frame size of 400x214.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/_shared background/diamond.jpg' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 400x213 and frame size is 400.0x213.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 400x214, which is a frame size of 400x214.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/ScreenSelectDifficulty picture1.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 153x191 and frame size is 153.0x191.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 154x192, which is a frame size of 154x192.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/ScreenSelectDifficulty picture2.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 153x191 and frame size is 153.0x191.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 154x192, which is a frame size of 154x192.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/ScreenSelectDifficulty picture3.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 153x191 and frame size is 153.0x191.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 154x192, which is a frame size of 154x192.
+WARNING: The graphic 'Themes/DDI2ndMix/Graphics/ScreenSelectDifficulty picture4.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 153x191 and frame size is 153.0x191.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 154x192, which is a frame size of 154x192.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenCaution background/diamond.jpg' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 400x213 and frame size is 400.0x213.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 400x214, which is a frame size of 400x214.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenCaution background/TITLE.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 292x175 and frame size is 292.0x175.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 292x176, which is a frame size of 292x176.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenCaution background/CONTROLBOX.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 228x165 and frame size is 228.0x165.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 228x166, which is a frame size of 228x166.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenCaution background/SERIOUS TEXT.png' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 569x134 and frame size is 569.0x134.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 570x134, which is a frame size of 570x134.
+WARNING: The graphic 'Themes/DDI2ndMix/BGAnimations/ScreenSelectMusic background/diamond.jpg' has frame dimensions that aren't even numbers.
+WARNING: 
+WARNING: The entire image is 400x213 and frame size is 400.0x213.0.
+WARNING: 
+WARNING: Image quality will be much improved if you resize the graphic to 400x214, which is a frame size of 400x214.
+WARNING: RageBitmapTexture: Couldn't load : No such file or directory
+Players joined: P1, P2
+Language: english
+Current renderer: Direct3D
+Theme: DDI2ndMix
